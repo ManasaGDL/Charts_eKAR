@@ -190,12 +190,12 @@ export default function Dashboard() {
     );
 
     return (
-        <div className="min-h-screen bg-gray-50/50 p-6 font-sans text-gray-900 selection:bg-blue-100 selection:text-blue-900">
-            <div className="max-w-7xl mx-auto space-y-8">
+        <div className="min-h-screen bg-gray-50/50 p-3 md:p-6 font-sans text-gray-900 selection:bg-blue-100 selection:text-blue-900">
+            <div className="max-w-7xl mx-auto space-y-6 md:space-y-8">
 
                 {/* Top Navigation Levels */}
-                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-2 flex justify-between items-center">
-                    <nav className="flex space-x-2" aria-label="Tabs">
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-2 flex flex-col sm:flex-row justify-between items-center gap-3">
+                    <nav className="flex space-x-2 w-full sm:w-auto overflow-x-auto whitespace-nowrap pb-1 sm:pb-0 custom-scrollbar" aria-label="Tabs">
                         <button
                             onClick={() => { setActiveArea('user'); setViewMode('dashboard'); }}
                             className={`px-4 py-2.5 rounded-xl font-medium text-sm flex items-center gap-2 transition-all
@@ -226,7 +226,9 @@ export default function Dashboard() {
                     </nav>
 
                     {/* View Toggle (Dashboard vs Reports) */}
-                    <ViewToggle />
+                    <div className="w-full sm:w-auto overflow-x-auto whitespace-nowrap">
+                        <ViewToggle />
+                    </div>
                 </div>
 
                 {/* CONTENT AREA */}
@@ -235,10 +237,10 @@ export default function Dashboard() {
                     {/* --- USER AREA --- */}
                     {activeArea === 'user' && (
                         <div className="space-y-6">
-                            <div className="flex justify-between items-end">
+                            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
                                 <div>
-                                    <h2 className="text-2xl font-bold text-gray-900">User Management</h2>
-                                    <p className="text-gray-500">Analyze user distribution and generate reports.</p>
+                                    <h2 className="text-xl md:text-2xl font-bold text-gray-900">User Management</h2>
+                                    <p className="text-sm text-gray-500">Analyze user distribution and generate reports.</p>
                                 </div>
                                 {viewMode === 'reports' && (
                                     <div className="flex gap-2">
@@ -302,10 +304,10 @@ export default function Dashboard() {
 
                     {activeArea === 'structure' && (
                         <div className="space-y-6">
-                            <div className="flex justify-between items-end">
+                            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
                                 <div>
-                                    <h2 className="text-2xl font-bold text-gray-900">Structure Overview</h2>
-                                    <p className="text-gray-500">Manage organizational hierarchy and geographical footprint.</p>
+                                    <h2 className="text-xl md:text-2xl font-bold text-gray-900">Structure Overview</h2>
+                                    <p className="text-sm text-gray-500">Manage organizational hierarchy and geographical footprint.</p>
                                 </div>
                                 {viewMode === 'reports' && (
                                     <div className="flex gap-2">
@@ -328,7 +330,7 @@ export default function Dashboard() {
                             </div>
 
                             {/* Structure Stats Cards */}
-                            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4">
                                     <div className="p-4 bg-indigo-50 text-indigo-600 rounded-xl">
                                         <Database size={24} />
@@ -442,10 +444,10 @@ export default function Dashboard() {
 
                     {activeArea === 'admin' && (
                         <div className="space-y-6">
-                            <div className="flex justify-between items-end">
+                            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
                                 <div>
-                                    <h2 className="text-2xl font-bold text-gray-900">Admin Management</h2>
-                                    <p className="text-gray-500">Manage admins and their hierarchy-level permissions.</p>
+                                    <h2 className="text-xl md:text-2xl font-bold text-gray-900">Admin Management</h2>
+                                    <p className="text-sm text-gray-500">Manage admins and their hierarchy-level permissions.</p>
                                 </div>
                                 {viewMode === 'reports' && (
                                     <div className="flex gap-2">
@@ -468,7 +470,7 @@ export default function Dashboard() {
                             </div>
 
                             {/* Admin Stats Cards */}
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4">
                                     <div className="p-4 bg-blue-50 text-blue-600 rounded-xl">
                                         <Users size={24} />

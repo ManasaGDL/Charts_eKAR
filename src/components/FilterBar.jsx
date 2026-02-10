@@ -31,8 +31,8 @@ export default function FilterBar({ filters, setFilters, options, locationHierar
     const availableOptions = activeField ? options[activeField] : [];
 
     return (
-        <div className="bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-sm border border-gray-100 animate-in fade-in slide-in-from-left-4 duration-500">
-            <div className="flex flex-col gap-6">
+        <div className="bg-white/80 backdrop-blur-md p-4 md:p-6 rounded-2xl shadow-sm border border-gray-100 animate-in fade-in slide-in-from-left-4 duration-500">
+            <div className="flex flex-col gap-5 md:gap-6">
                 <div className="flex items-center gap-2">
                     <div className="p-2 bg-blue-500 rounded-lg text-white">
                         <Filter size={20} />

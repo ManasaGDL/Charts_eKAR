@@ -37,7 +37,7 @@ export default function AdminCharts({ data }) {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 animate-in fade-in duration-500">
             {/* Type Distribution */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-gray-100">
                 <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
                     <span className="w-1.5 h-6 bg-green-500 rounded-full"></span>
                     Admin Role Distribution
@@ -66,7 +66,7 @@ export default function AdminCharts({ data }) {
             </div>
 
             {/* Location Distribution */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-gray-100">
                 <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
                     <span className="w-1.5 h-6 bg-indigo-500 rounded-full"></span>
                     Admins by Zone

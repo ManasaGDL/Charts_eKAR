@@ -21,7 +21,7 @@ export default function StructureCharts({ data }) {
     return (
         <div className="grid grid-cols-1 gap-8 animate-in fade-in duration-500">
             {/* Staff Distribution by Zone */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-gray-100">
                 <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
                     <span className="w-1.5 h-6 bg-indigo-500 rounded-full"></span>
                     Staff Strength per Zone
@@ -44,7 +44,7 @@ export default function StructureCharts({ data }) {
             </div>
 
             {/* Operational Reach (Branches) */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-gray-100">
                 <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
                     <span className="w-1.5 h-6 bg-teal-500 rounded-full"></span>
                     Operational Units per Zone

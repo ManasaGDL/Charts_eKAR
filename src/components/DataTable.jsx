@@ -12,8 +12,8 @@ export default function DataTable({ users, meta, setPage, total, onExport }) {
 
     return (
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden animate-in fade-in duration-700">
-            <div className="p-6 border-b border-gray-100 flex flex-col sm:flex-row justify-between items-center bg-gray-50/50">
-                <div>
+            <div className="p-4 md:p-6 border-b border-gray-100 flex flex-col sm:flex-row justify-between items-center bg-gray-50/50 gap-2">
+                <div className="text-center sm:text-left">
                     <h3 className="text-lg font-bold text-gray-800">User Directory</h3>
                     <p className="text-sm text-gray-500 mt-1">Showing {users.length} of {total} total records</p>
                 </div>
@@ -82,24 +82,24 @@ export default function DataTable({ users, meta, setPage, total, onExport }) {
                 </table>
             </div>
 
-            <div className="p-4 border-t border-gray-100 flex items-center justify-between bg-gray-50/50">
-                <div className="text-sm text-gray-500">
+            <div className="p-3 md:p-4 border-t border-gray-100 flex items-center justify-between bg-gray-50/50">
+                <div className="text-xs md:text-sm text-gray-500">
                     Page <span className="font-bold text-gray-800">{meta.page}</span> of <span className="font-bold text-gray-800">{meta.totalPages}</span>
                 </div>
                 <div className="flex gap-2">
                     <button
                         onClick={() => setPage(Math.max(1, meta.page - 1))}
                         disabled={meta.page <= 1}
-                        className="p-2 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-gray-600"
+                        className="p-1.5 md:p-2 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-gray-600"
                     >
-                        <ChevronLeft size={18} />
+                        <ChevronLeft size={16} />
                     </button>
                     <button
                         onClick={() => setPage(Math.min(meta.totalPages, meta.page + 1))}
                         disabled={meta.page >= meta.totalPages}
-                        className="p-2 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-gray-600"
+                        className="p-1.5 md:p-2 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-gray-600"
                     >
-                        <ChevronRight size={18} />
+                        <ChevronRight size={16} />
                     </button>
                 </div>
             </div>

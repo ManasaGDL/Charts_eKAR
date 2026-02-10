@@ -54,9 +54,9 @@ export default function ChartsContainer({ data }) {
     const bloodData = processData(data, 'bloodGroup');
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8">
             {/* Profession Chart */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
                 <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
                     <span className="w-1.5 h-6 bg-indigo-500 rounded-full"></span>
                     Profession Distribution
@@ -79,7 +79,7 @@ export default function ChartsContainer({ data }) {
             </div>
 
             {/* Gender Chart */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
                 <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
                     <span className="w-1.5 h-6 bg-pink-500 rounded-full"></span>
                     Gender Ratio
@@ -108,7 +108,7 @@ export default function ChartsContainer({ data }) {
             </div>
 
             {/* Qualification Chart */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
                 <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
                     <span className="w-1.5 h-6 bg-violet-500 rounded-full"></span>
                     Qualifications
@@ -131,7 +131,7 @@ export default function ChartsContainer({ data }) {
             </div>
 
             {/* Blood Group Chart */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
                 <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
                     <span className="w-1.5 h-6 bg-red-500 rounded-full"></span>
                     Blood Groups
