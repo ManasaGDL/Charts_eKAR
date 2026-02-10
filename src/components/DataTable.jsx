@@ -17,42 +17,64 @@ export default function DataTable({ users, meta, setPage, total, onExport }) {
                     <h3 className="text-lg font-bold text-gray-800">User Directory</h3>
                     <p className="text-sm text-gray-500 mt-1">Showing {users.length} of {total} total records</p>
                 </div>
-                <button
-                    onClick={onExport}
-                    className="mt-4 sm:mt-0 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-xl text-sm font-medium transition-colors flex items-center gap-2"
-                >
-                    <FileSpreadsheet size={16} /> Export to Excel
-                </button>
             </div>
 
             <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                     <thead>
-                        <tr className="bg-gray-50/50 text-gray-500 uppercase text-xs font-semibold tracking-wider">
-                            <th className="p-4 border-b border-gray-100">#</th>
-                            <th className="p-4 border-b border-gray-100">Name</th>
-                            <th className="p-4 border-b border-gray-100">Age</th>
-                            <th className="p-4 border-b border-gray-100">Profession</th>
-                            <th className="p-4 border-b border-gray-100">Gender</th>
-                            <th className="p-4 border-b border-gray-100">Qualification</th>
-                            <th className="p-4 border-b border-gray-100">Blood Group</th>
+                        <tr className="bg-gray-50/50 text-gray-500 uppercase text-[10px] font-bold tracking-widest border-b border-gray-100">
+                            <th className="p-4">#</th>
+                            <th className="p-4">User Details</th>
+                            <th className="p-4">Demographics</th>
+                            <th className="p-4">Location Hierarchy</th>
+                            <th className="p-4">Status</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-50 text-gray-700 text-sm">
                         {users.map((user, index) => (
-                            <tr key={user.id} className="hover:bg-gray-50/80 transition-colors">
+                            <tr key={user.id} className="hover:bg-gray-50/80 transition-colors group">
                                 <td className="p-4 font-medium text-gray-400">{(meta.page - 1) * meta.limit + index + 1}</td>
-                                <td className="p-4 font-semibold text-gray-900">{user.name}</td>
-                                <td className="p-4">{user.age}</td>
                                 <td className="p-4">
-                                    <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-indigo-50 text-indigo-700 border border-indigo-100">
-                                        {user.profession}
-                                    </span>
+                                    <div className="flex flex-col">
+                                        <span className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{user.name}</span>
+                                        <span className="text-xs text-gray-400">{user.email}</span>
+                                        <span className="text-[10px] text-gray-300">{user.phone}</span>
+                                    </div>
                                 </td>
-                                <td className="p-4">{user.gender}</td>
-                                <td className="p-4">{user.qualification}</td>
                                 <td className="p-4">
-                                    <span className="font-mono text-xs">{user.bloodGroup}</span>
+                                    <div className="flex flex-col gap-1">
+                                        <div className="flex items-center gap-2">
+                                            <span className="px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 text-[10px] font-bold border border-indigo-100">
+                                                {user.profession}
+                                            </span>
+                                            <span className="text-gray-400 text-xs">{user.gender}</span>
+                                        </div>
+                                        <div className="text-[10px] text-gray-500 flex gap-2">
+                                            <span>Age: <b className="text-gray-700">{user.age}</b></span>
+                                            <span>Bldg: <b className="text-gray-700">{user.bloodGroup}</b></span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td className="p-4">
+                                    <div className="text-[11px] space-y-0.5">
+                                        <div className="flex items-center gap-1.5">
+                                            <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                                            <span className="text-gray-600 font-medium">{user.zone} / {user.state}</span>
+                                        </div>
+                                        <div className="flex items-center gap-1.5 pl-3">
+                                            <span className="w-1 h-1 rounded-full bg-gray-300"></span>
+                                            <span className="text-gray-400">{user.branch} - {user.subBranch}</span>
+                                        </div>
+                                        <div className="pl-3 text-[10px] font-bold text-gray-300/80">{user.division}</div>
+                                    </div>
+                                </td>
+                                <td className="p-4">
+                                    <span className={`px-2.5 py-1 rounded-lg text-[10px] font-bold border ${user.status === 'Active' ? 'bg-green-50 text-green-700 border-green-100' :
+                                        user.status === 'Pending' ? 'bg-amber-50 text-amber-700 border-amber-100' :
+                                            'bg-red-50 text-red-700 border-red-100'
+                                        }`}>
+                                        {user.status}
+                                    </span>
                                 </td>
                             </tr>
                         ))}
@@ -81,6 +103,6 @@ export default function DataTable({ users, meta, setPage, total, onExport }) {
                     </button>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
