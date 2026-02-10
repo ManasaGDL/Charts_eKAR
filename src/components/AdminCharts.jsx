@@ -15,6 +15,7 @@ import {
 const COLORS = ['#10b981', '#6366f1']; // Green for Active, Indigo for Regular
 
 export default function AdminCharts({ data }) {
+
     if (!data || data.length === 0) return (
         <div className="p-8 text-center text-gray-400 bg-white rounded-2xl border border-dashed border-gray-300">
             No admin data available for charts
